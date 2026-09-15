@@ -1,0 +1,289 @@
+:root {
+    --branco-azulado: #F4F6FF;
+    --amarelo: #FFCB74;
+    --laranja: #F0A03A;
+    --terracota: #EA907A;
+    --vermelho: #d7180a;
+    --verde-petroleo: #4F8A8B;
+    --ciano: #4FE1E8;
+
+    --texto-principal: #1B1B1F;
+    --texto-claro: #F4F6FF;
+    --sombra: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--branco-azulado);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+
+b {
+    color: var(--vermelho);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+}
+
+/* =========================================================
+   Cabeçalho
+   ========================================================= */
+header {
+    background: linear-gradient(135deg, var(--texto-principal) 0%, #2b2b33 100%);
+    border-bottom: 4px solid var(--vermelho);
+    position: static;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px var(--sombra);
+}
+
+.header-1 {
+    color: var(--texto-claro);
+    text-align: center;
+    padding: 24px 16px 12px;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.header-1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--vermelho);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 22px;
+    color: var(--texto-claro);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.25s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: var(--laranja);
+    color: var(--texto-principal);
+}
+
+.nav-link.active {
+    background-color: var(--vermelho);
+    color: var(--texto-claro);
+    border-color: var(--vermelho);
+}
+
+/* =========================================================
+   Main / Seções
+   ========================================================= */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.news-title,
+.about-title {
+    color: var(--texto-principal);
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 6px solid var(--vermelho);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   Grid de notícias
+   ========================================================= */
+.container-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+    justify-items: center;
+}
+
+.box {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px var(--sombra);
+    border-top: 5px solid var(--laranja);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px var(--sombra);
+    border-top-color: var(--vermelho);
+}
+
+.box p {
+    padding: 16px;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.box.a { border-top-color: var(--laranja); }
+.box.b { border-top-color: var(--terracota); }
+.box.c { border-top-color: var(--verde-petroleo); }
+.box.d { border-top-color: var(--amarelo); }
+.box.e {
+    background-color: var(--verde-petroleo);
+    border-top-color: var(--ciano);
+    grid-column: 2 / span 2;
+    width: min(100%, 500px);
+    justify-self: center;
+    text-align: center;
+}
+
+.box.e p {
+    color: var(--texto-claro);
+}
+
+.box.e a {
+    color: var(--texto-claro);
+    font-weight: 600;
+}
+
+.box.e a:hover {
+    color: var(--amarelo);
+}
+
+
+/* =========================================================
+   Sobre
+   ========================================================= */
+.about p {
+    background-color: #FFFFFF;
+    padding: 50px;
+    border-radius: 12px;
+    border-left: 30px solid var(--terracota);
+    box-shadow: 0 3px 10px var(--sombra);
+    font-size: 1rem;
+    max-width: 100%;
+}
+
+/* =========================================================
+   Rodapé
+   ========================================================= */
+.footer {
+    background-color: var(--texto-principal);
+    color: var(--texto-claro);
+    border-top: 4px solid var(--vermelho);
+    padding: 24px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+}
+
+.footer-author {
+    color: var(--laranja);
+    font-weight: 600;
+}
+
+.footer-github {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-claro);
+    font-size: 0.9rem;
+}
+
+.footer-github-icon {
+    fill: var(--texto-claro);
+    transition: fill 0.2s ease-in-out;
+}
+
+.footer-github:hover .footer-github-icon,
+.footer-github:hover {
+    color: var(--ciano);
+    fill: var(--ciano);
+}
+
+/* =========================================================
+   Responsividade
+   ========================================================= */
+@media (max-width: 600px) {
+    .header-1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
